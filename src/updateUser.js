@@ -79,7 +79,7 @@ class Update extends Component {
                 <br/><br/><center>
                 <div>
                         <br/>
-                        <input onChange={(event) => {this.setState({userID: event.target.value})}} placeholder={this.props.match.params.id} /><br/><br/>
+                        <input value={this.state.userID} readOnly= {true} style={{backgroundColor: 'LightGray'}}/><br/><br/>
                         <input onChange={(event) => {this.setState({firstName: event.target.value})}} placeholder={this.props.match.params.firstName} /><br/><br/>
                         <input onChange={(event) => {this.setState({lastName: event.target.value})}} placeholder={this.props.match.params.lastName} /><br/><br/>
                         <input onChange={(event) => {this.setState({email: event.target.value})}} placeholder={this.props.match.params.email} /><br/><br/>
