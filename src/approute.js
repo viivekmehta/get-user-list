@@ -10,7 +10,7 @@ class AppRoutes extends Component {
             <Router>
                 <Route exact path='/' component={Home} />
                 <Route exact path='/home' component={Home} />
-                <Route exact path='/update/:id/:firstName/:lastName/:email/:address'
+                <Route exact path='/update/:id/:firstName/:lastName/:email/:addressLine1+/:addressLine2/:city/:state/:pinCode'
                 render = {props=>(
                     <Update {...props} />
                 )} 

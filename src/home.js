@@ -71,11 +71,22 @@ class Home extends Component {
                             <Table striped bordered hover>
                                 <thead>
                                     <tr>
-                                        <th> User ID </th>
-                                        <th> First Name </th>
-                                        <th> Last Name </th>
-                                        <th> Email </th>
-                                        <th> Address </th>
+                                        <th> <center> User ID </center></th>
+                                        <th> <center> First Name </center></th>
+                                        <th> <center>Last Name </center></th>
+                                        <th> <center> Email </center></th>
+                                        <th>
+                                            <div style={{ paddingBottom:'1vh'}}>
+                                                <center>Address</center>
+                                            </div>
+                                            <div style={{borderTop:'solid', paddingTop:'1vh'}}>
+                                                <div style={{margin:'1%'}}> Line 1 </div>
+                                                <div style={{margin:'1%'}}> Line 2 </div>
+                                                <div style={{margin:'1%'}}> City </div>
+                                                <div style={{margin:'1%'}}> State </div>
+                                                <div style={{margin:'1%'}}> PIN Code </div>
+                                            </div>
+                                        </th>
                                         <th> Action </th>
                                     </tr>
                                 </thead>
@@ -87,9 +98,17 @@ class Home extends Component {
                                                 <td> {item.Firstname} </td>
                                                 <td> {item.Lastname} </td>
                                                 <td> {item.Email} </td>
-                                                <td> {item.Address.City} </td>
                                                 <td> 
-                                                    <Link to={"/Update/"+item.UserId+"/"+item.Firstname+"/"+item.Lastname+"/"+item.Email+"/"+item.Address.City}> <input type="button" value="Update"/>  </Link>
+                                                    <div>
+                                                        <div style={{float: 'left', width:'19%'}}> {item.Address.AddressLine1} </div>
+                                                        <div style={{float: 'left', width:'19%'}}> {item.Address.AddressLine2} </div>
+                                                        <div style={{float: 'left', width:'19%'}}> {item.Address.City} </div>
+                                                        <div style={{float: 'left', width:'19%'}}> {item.Address.State} </div>
+                                                        <div style={{float: 'left', width:'19%'}}> {item.Address.PinCode} </div>
+                                                    </div>
+                                                </td>
+                                                <td> 
+                                                    <Link to={"/Update/"+item.UserId+"/"+item.Firstname+"/"+item.Lastname+"/"+item.Email+"/"+item.Address.AddressLine1+"/"+item.Address.AddressLine2+"/"+item.Address.City+"/"+item.Address.State+"/"+item.Address.PinCode}> <input type="button" value="Update"/>  </Link>
                                                     <input type="button" value="Delete" onClick={()=>{this.deleteUser(item.UserId)}}/> 
                                                 </td>
                                             </tr>
