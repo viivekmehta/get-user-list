@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Table } from 'react-bootstrap';
-import "react-table/react-table.css";
 import './App.css';
 class GetUserByID extends Component {
     
@@ -57,7 +56,7 @@ class GetUserByID extends Component {
                 </div>
                 <br/><br/>
                 <center>
-                <div style={{border: '3px solid black', width: '20%'}}>
+                <div>
                         <br/>
                         <input onChange={(event) => {this.setState({userID: event.target.value})}} placeholder="User ID" /><br/><br/>
                         <button onClick={()=>{this.getUserByID()}}>Get User</button><br/><br/>
@@ -67,8 +66,8 @@ class GetUserByID extends Component {
                 <br/><br/>
                 <div>
                     <center>
-                        <div style={{border: '3px solid black', width: '70%'}}>
-                            <Table>
+                        <div>
+                            <Table striped bordered hover>
                                 <thead>
                                     <tr>
                                         <th> User ID </th>
@@ -76,7 +75,6 @@ class GetUserByID extends Component {
                                         <th> Last Name </th>
                                         <th> Email </th>
                                         <th> Address </th>
-                                        <th> Action </th>
                                     </tr>
                                 </thead>
                                 <tbody>

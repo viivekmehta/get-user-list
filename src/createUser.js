@@ -21,7 +21,8 @@ class Create extends Component {
         fetch('https://jsonblob.com/api/jsonBlob/897df7ce-5692-11eb-9d92-b1d70edc9777')
         .then(res => res.json())
         .then((data) => {
-            this.setState({ users: data })
+            this.setState({ users: data });
+            this.setState({ userID: (data[(data.length) - 1])["UserId"] + 1});
         })
         .catch(console.log)
     }
@@ -63,13 +64,10 @@ class Create extends Component {
         return (
             <div>
                 <br/>
-                <div align="left">
-                    
-                </div>
                 <br/><br/><center>
-                <div style={{border: '3px solid black', width: '20%'}}>
+                <div>
                         <br/>
-                        <input onChange={(event) => {this.setState({userID: event.target.value})}} placeholder="User ID" /><br/><br/>
+                        <input value={this.state.userID} readOnly= {true} style={{backgroundColor: 'LightGray'}}/><br/><br/>
                         <input onChange={(event) => {this.setState({firstName: event.target.value})}} placeholder="First Name" /><br/><br/>
                         <input onChange={(event) => {this.setState({lastName: event.target.value})}} placeholder="Last Name" /><br/><br/>
                         <input onChange={(event) => {this.setState({email: event.target.value})}} placeholder="Email" /><br/><br/>

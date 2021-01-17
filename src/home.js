@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Table } from 'react-bootstrap';
+import Table from 'react-bootstrap/Table'
 import "react-table/react-table.css";
 import './App.css';
 class Home extends Component {
@@ -67,8 +67,8 @@ class Home extends Component {
                 <br/><br/>
                 <div>
                     <center>
-                    <div style={{border: '3px solid black', width: '70%'}}>
-                            <Table>
+                    <div>
+                            <Table striped bordered hover>
                                 <thead>
                                     <tr>
                                         <th> User ID </th>
