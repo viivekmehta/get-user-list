@@ -49,7 +49,7 @@ class GetUserByID extends Component {
         return (
             <div>
                 <br/>
-                <div align="left">
+                <div align="center">
                     <Link to="/Home"> <input type="button" value="Home"/></Link> 
                     <Link to="/Create"> <input type="button" value="Create User"/></Link>
                     <Link to="/Home"> <input type="button" value="Show All Users"/></Link>
@@ -67,25 +67,41 @@ class GetUserByID extends Component {
                 <div>
                     <center>
                         <div>
-                            <Table striped bordered hover>
+                        <Table striped bordered hover>
                                 <thead>
                                     <tr>
-                                        <th> User ID </th>
-                                        <th> First Name </th>
-                                        <th> Last Name </th>
-                                        <th> Email </th>
-                                        <th> Address </th>
+                                        <th> <center> User ID </center></th>
+                                        <th> <center> First Name </center></th>
+                                        <th> <center>Last Name </center></th>
+                                        <th> <center> Email </center></th>
+                                        <th><center>
+                                            <tr>
+                                                <td> Line 1 </td>
+                                                <td> Line 2 </td>
+                                                <td> City </td>
+                                                <td> State </td>
+                                                <td> Pin Code </td>
+                                            </tr>
+                                        </center></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {
                                         this.state.userByID.map((item, index) => 
                                             <tr>
-                                                <td> {item.UserId} </td>
-                                                <td> {item.Firstname} </td>
-                                                <td> {item.Lastname} </td>
-                                                <td> {item.Email} </td>
-                                                <td> {item.Address.City} </td>
+                                                <td><center> {item.UserId} </center></td>
+                                                <td><center> {item.Firstname} </center></td>
+                                                <td><center> {item.Lastname} </center></td>
+                                                <td><center> {item.Email} </center></td>
+                                                <td><center>
+                                                    <tr>
+                                                        <td> {item.Address.AddressLine1} </td>
+                                                        <td> {item.Address.AddressLine2} </td>
+                                                        <td> {item.Address.City} </td>
+                                                        <td> {item.Address.State} </td>
+                                                        <td> {item.Address.PinCode} </td>
+                                                    </tr>
+                                                </center></td>
                                             </tr>
                                         )
                                     }

@@ -59,8 +59,7 @@ class Home extends Component {
         return (
             <div>
                 <br/>
-                <div align="left">
-                    <Link to="/Home"> <input type="button" value="Home"/></Link> 
+                <div align="center">
                     <Link to="/Create"> <input type="button" value="Create User"/></Link>
                     <Link to="/GetUserByID"> <input type="button" value="Get User By ID"/></Link>
                 </div>
@@ -75,42 +74,39 @@ class Home extends Component {
                                         <th> <center> First Name </center></th>
                                         <th> <center>Last Name </center></th>
                                         <th> <center> Email </center></th>
-                                        <th>
-                                            <div style={{ paddingBottom:'1vh'}}>
-                                                <center>Address</center>
-                                            </div>
-                                            <div style={{borderTop:'solid', paddingTop:'1vh'}}>
-                                                <div style={{margin:'1%'}}> Line 1 </div>
-                                                <div style={{margin:'1%'}}> Line 2 </div>
-                                                <div style={{margin:'1%'}}> City </div>
-                                                <div style={{margin:'1%'}}> State </div>
-                                                <div style={{margin:'1%'}}> PIN Code </div>
-                                            </div>
-                                        </th>
-                                        <th> Action </th>
+                                        <th><center>
+                                            <tr>
+                                                <td> Line 1 </td>
+                                                <td> Line 2 </td>
+                                                <td> City </td>
+                                                <td> State </td>
+                                                <td> Pin Code </td>
+                                            </tr>
+                                        </center></th>
+                                        <th><center> Action </center></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {
                                         this.state.users.map((item, index) => 
                                             <tr>
-                                                <td> {item.UserId} </td>
-                                                <td> {item.Firstname} </td>
-                                                <td> {item.Lastname} </td>
-                                                <td> {item.Email} </td>
-                                                <td> 
-                                                    <div>
-                                                        <div style={{float: 'left', width:'19%'}}> {item.Address.AddressLine1} </div>
-                                                        <div style={{float: 'left', width:'19%'}}> {item.Address.AddressLine2} </div>
-                                                        <div style={{float: 'left', width:'19%'}}> {item.Address.City} </div>
-                                                        <div style={{float: 'left', width:'19%'}}> {item.Address.State} </div>
-                                                        <div style={{float: 'left', width:'19%'}}> {item.Address.PinCode} </div>
-                                                    </div>
-                                                </td>
-                                                <td> 
+                                                <td><center> {item.UserId} </center></td>
+                                                <td><center> {item.Firstname} </center></td>
+                                                <td><center> {item.Lastname} </center></td>
+                                                <td><center> {item.Email} </center></td>
+                                                <td><center>
+                                                    <tr>
+                                                        <td> {item.Address.AddressLine1} </td>
+                                                        <td> {item.Address.AddressLine2} </td>
+                                                        <td> {item.Address.City} </td>
+                                                        <td> {item.Address.State} </td>
+                                                        <td> {item.Address.PinCode} </td>
+                                                    </tr>
+                                                </center></td>
+                                                <td><center>
                                                     <Link to={"/Update/"+item.UserId+"/"+item.Firstname+"/"+item.Lastname+"/"+item.Email+"/"+item.Address.AddressLine1+"/"+item.Address.AddressLine2+"/"+item.Address.City+"/"+item.Address.State+"/"+item.Address.PinCode}> <input type="button" value="Update"/>  </Link>
                                                     <input type="button" value="Delete" onClick={()=>{this.deleteUser(item.UserId)}}/> 
-                                                </td>
+                                                </center></td>
                                             </tr>
                                         )
                                     }
