@@ -76,6 +76,9 @@ class GetUserByID extends Component {
                                         <th> <center> Email </center></th>
                                         <th><center>
                                             <tr>
+                                                <td colSpan="5"> Address </td>
+                                            </tr>
+                                            <tr>
                                                 <td> Line 1 </td>
                                                 <td> Line 2 </td>
                                                 <td> City </td>
